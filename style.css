@@ -1,0 +1,88 @@
+*{
+    text-align: center;
+    color: rgb(233, 228, 228);
+    font-family: sans-serif;
+    margin: auto;
+    width: 100%;
+    font-style: bolder;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    display: grid;
+    grid-template-rows: 0fr 0.1fr 0fr;
+    background-color: #0d1117;
+}
+
+header{
+    background-color: #161b22;
+    padding: 1em 0em;
+    font-style: italic;
+}
+
+main{
+    padding-top: 2em;
+    background-color: #0d1117;
+    display: grid;
+    grid-template-rows: 5em 10em 8em 18em;
+}
+
+footer{
+    padding: 1em 0em;
+    font-size: 120%;
+}
+
+.affichage{
+    margin: auto;
+    display: grid;
+    grid-template-columns: 10em 10em;
+    row-gap: 1em;
+    column-gap: 5em;
+    justify-content: center;
+}
+
+.resJoueur, .resAdverse{
+    font-size: 500%;
+}
+
+
+.scoreJoueur,.scoreAdverse{
+    font-size: 120%;
+}
+
+.choix{
+    display: flex;
+    justify-content: center;
+    font-size: 600%;
+    width: 20%;
+    gap: 0.2em;
+}
+
+.rock, .paper, .scissors{
+    background-color: #161b22;
+    padding: 0.2em;
+    border-radius: 15px;
+    margin: auto;
+    cursor: pointer;
+}
+
+main h2{
+    font-size: 220%;
+}
+
+main p{
+    font-size: 110%;
+    width: 20%;
+    background-color: #161b22;
+    padding: 2em 1em;
+    border-radius: 15px;
+}
+
+.rock:hover, .paper:hover, .scissors:hover{
+    background-color: #2f3640;
+}
+
