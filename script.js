@@ -2,13 +2,13 @@ function getComputerChoice(){
     let num = Math.floor(Math.random() * 3);
     let choice;
     if(num == 0){
-        return "Rock";
+        return "rock";
     }
     else if(num == 1){
-        return "Paper";
+        return "paper";
     }
     else if(num == 2){
-        return "Scissors";
+        return "scissors";
     }
 }
 
@@ -48,32 +48,89 @@ function getResult(playerSelection, computerSelection){
 
 }
 
-function game(){
-    let playerScore = 0;
-    let computerScore = 0;
-    let games = 0;
-    while(games < 5){
-        games++;
-        let playerChoice = prompt("Welcome to the Rock/Paper/Scissors game please chose what to play");
-        let computerChoice = getComputerChoice();
-        let result = getResult(playerChoice, computerChoice);
-        if(result.includes("win")){
-            playerScore++;
-        }
-        else{
-            computerScore++;
-        }
-        console.log(result);
-    }
-    if(playerScore > computerScore){
-        console.log("the game has finished, you're the final winner !");
-    }
-    else if(playerScore < computerScore){
-        console.log("the game has finished, you're the final loser !");
-    }
-    else if(playerScore == computerScore){
-        console.log("the game has finished, there's no winner !");
-    }
+
+
+let rock = document.querySelector(".rock");
+rock.addEventListener('click', playRock);
+
+let paper = document.querySelector(".paper");
+paper.addEventListener('click', playPaper);
+
+let scissors = document.querySelector(".scissors");
+scissors.addEventListener('click', playScissors);
+
+function changeIconAdverse(choice){
+    let computerIcon = document.querySelector(".resAdverse");
+    switch (choice) {
+        case 'rock':
+            computerIcon.textContent = "✊";
+            break;
+        case 'paper':
+            computerIcon.textContent = "✋";
+            break;
+        case 'scissors':
+            computerIcon.textContent = "✌";
+            break;
+        default:
+          computerIcon.textContent = "❔";
+      }
 }
 
-game();
+let joueurIcon = document.querySelector(".resJoueur");
+let para = document.querySelector("main p");
+let joueurScore = document.querySelector(".scoreJoueur");
+let ComputerScore = document.querySelector(".scoreAdverse");
+
+function playRock(){
+    let computerChoice = getComputerChoice();
+    changeIconAdverse(computerChoice);
+    joueurIcon.textContent = "✊";
+    para.textContent = getResult("rock", computerChoice);
+    if (para.textContent.includes("win")){
+        joueurScore.textContent = joueurScore.textContent.replace(/^\D+/g, '')
+        let score = parseInt(joueurScore.textContent,10) + 1;
+        joueurScore.textContent = "score joueur: " + score;
+    }
+    else if(para.textContent.includes("lost")){
+        ComputerScore.textContent = ComputerScore.textContent.replace(/^\D+/g, '')
+        let score = parseInt(ComputerScore.textContent,10) + 1;
+        ComputerScore.textContent = "score adverse: " + score;
+    }
+    console.log(joueurScore.textContent);
+}
+
+function playPaper(){
+    let computerChoice = getComputerChoice();
+    changeIconAdverse(computerChoice);
+    joueurIcon.textContent = "✋";
+    para.textContent = getResult("paper", computerChoice);
+    if (para.textContent.includes("win")){
+        joueurScore.textContent = joueurScore.textContent.replace(/^\D+/g, '')
+        let score = parseInt(joueurScore.textContent,10) + 1;
+        joueurScore.textContent = "score joueur: " + score;
+    }
+    else if(para.textContent.includes("lost")){
+        ComputerScore.textContent = ComputerScore.textContent.replace(/^\D+/g, '')
+        let score = parseInt(ComputerScore.textContent,10) + 1;
+        ComputerScore.textContent = "score adverse: " + score;
+    }
+    console.log(joueurScore.textContent);
+}
+
+function playScissors(){
+    let computerChoice = getComputerChoice();
+    changeIconAdverse(computerChoice);
+    joueurIcon.textContent = "✌";
+    para.textContent = getResult("scissors", computerChoice);
+    if (para.textContent.includes("win")){
+        joueurScore.textContent = joueurScore.textContent.replace(/^\D+/g, '')
+        let score = parseInt(joueurScore.textContent,10) + 1;
+        joueurScore.textContent = "score joueur: " + score;
+    }
+    else if(para.textContent.includes("lost")){
+        ComputerScore.textContent = ComputerScore.textContent.replace(/^\D+/g, '')
+        let score = parseInt(ComputerScore.textContent,10) + 1;
+        ComputerScore.textContent = "score adverse: " + score;
+    }
+    console.log(joueurScore.textContent);
+}
