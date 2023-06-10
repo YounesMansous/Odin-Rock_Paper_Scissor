@@ -90,13 +90,25 @@ function playRock(){
         joueurScore.textContent = joueurScore.textContent.replace(/^\D+/g, '')
         let score = parseInt(joueurScore.textContent,10) + 1;
         joueurScore.textContent = "score joueur: " + score;
+        if(score == 5){
+            score = 0;
+            joueurScore.textContent = "score adverse: " + 0;
+            ComputerScore.textContent = "score adverse: " + 0;
+            para.textContent = "You win the game !"
+        }
     }
     else if(para.textContent.includes("lost")){
         ComputerScore.textContent = ComputerScore.textContent.replace(/^\D+/g, '')
         let score = parseInt(ComputerScore.textContent,10) + 1;
         ComputerScore.textContent = "score adverse: " + score;
+        if(score == 5){
+            score = 0;
+            joueurScore.textContent = "score adverse: " + 0;
+            ComputerScore.textContent = "score adverse: " + 0;
+            para.textContent = "You lost the game !"
+        }
     }
-    console.log(joueurScore.textContent);
+    
 }
 
 function playPaper(){
@@ -108,14 +120,26 @@ function playPaper(){
         joueurScore.textContent = joueurScore.textContent.replace(/^\D+/g, '')
         let score = parseInt(joueurScore.textContent,10) + 1;
         joueurScore.textContent = "score joueur: " + score;
+        if(score == 5){
+            score = 0;
+            joueurScore.textContent = "score adverse: " + 0;
+            ComputerScore.textContent = "score adverse: " + 0;
+            para.textContent = "You win the game !"
+        }
     }
     else if(para.textContent.includes("lost")){
         ComputerScore.textContent = ComputerScore.textContent.replace(/^\D+/g, '')
         let score = parseInt(ComputerScore.textContent,10) + 1;
         ComputerScore.textContent = "score adverse: " + score;
+        if(score == 5){
+            score = 0;
+            joueurScore.textContent = "score adverse: " + 0;
+            ComputerScore.textContent = "score adverse: " + 0;
+            para.textContent = "You lost the game !"
+        }
     }
-    console.log(joueurScore.textContent);
-}
+    
+} 
 
 function playScissors(){
     let computerChoice = getComputerChoice();
@@ -126,11 +150,23 @@ function playScissors(){
         joueurScore.textContent = joueurScore.textContent.replace(/^\D+/g, '')
         let score = parseInt(joueurScore.textContent,10) + 1;
         joueurScore.textContent = "score joueur: " + score;
+        if(score == 5){
+            score = 0;
+            joueurScore.textContent = "score adverse: " + 0;
+            ComputerScore.textContent = "score adverse: " + 0;
+            para.textContent = "You win the game !"
+        }
     }
     else if(para.textContent.includes("lost")){
         ComputerScore.textContent = ComputerScore.textContent.replace(/^\D+/g, '')
         let score = parseInt(ComputerScore.textContent,10) + 1;
         ComputerScore.textContent = "score adverse: " + score;
+        if(score == 5){
+            score = 0;
+            joueurScore.textContent = "score adverse: " + 0;
+            ComputerScore.textContent = "score adverse: " + 0;
+            para.textContent = "You lost the game !"
+        }
     }
-    console.log(joueurScore.textContent);
+    
 }
